@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Trip Planner</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'plannerapp/style.css' %}">
+    <script src="{% static 'plannerapp/scpt.js' %}"></script>
+</head>
+
+
+<body>
+    <main>
+        {% block content %}
+        {% if user.is_authenticated %}
+            <div id="title">
+                <h1>Your Trips</h1>
+            </div>
+
+            <table class="center">
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Leave on</th>
+                    <th>Return on</th>
+                    <th># of Members</th>
+                    <th>Status</th>
+                    <th> </th>
+                </tr>
+                <tr>
+                    <td>West Lafayette</td>
+                    <td>Chicago</td>
+                    <td>8/4/22</td>
+                    <td>8/17/22</td>
+                    <td>2</td>
+                    <td>Past/Incomplete</td>
+                    <td><a href="#">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>West Lafayette</td>
+                    <td>New York</td>
+                    <td>11/15/22</td>
+                    <td>12/1/22</td>
+                    <td>4</td>
+                    <td>Planning</td>
+                    <td><a href="#">Edit</a></td>
+                </tr>
+            </table>
+
+            <div id="add">
+                <a href="edit.html">Add a trip</a>
+            </div> 
+
+            <div id="logout">
+                <a href="hm">Log out</a>
+            </div> 
+
+            <div id="Help">
+                <a href="#">Help</a>
+            </div> 
+
+            <div id="wavePic">
+                <img src="{% static 'plannerapp/img/wave.png' %}" alt="Traveller" width="320" height="120">
+            </div>
+        {% else %}
+            <p>You are not logged in</p>
+        {% endif %}
+        {% endblock %}
+    </main>
+</body>
+</html>

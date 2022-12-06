@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    padding: 2vh 4vw 2vh 4vw;
+}
+
+table {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+    border-collapse: collapse;
+}
+  
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 20px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+}
+
+
+.hovertext {
+    position: relative;
+    border-bottom: 1px dotted black;
+}
+
+.hovertext:before {
+content: attr(data-hover);
+visibility: hidden;
+opacity: 0;
+width: 140px;
+background-color: black;
+color: #fff;
+text-align: center;
+border-radius: 5px;
+padding: 5px 0;
+transition: opacity 1s ease-in-out;
+
+position: absolute;
+z-index: 1;
+left: 0;
+top: 110%;
+}
+  
+.hovertext:hover:before {
+    opacity: 1;
+    visibility: visible;
+    }
+
+
+#title{
+
+    clear: both;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+
+}
+
+#LogIn{
+    clear: both;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    overflow: auto;
+}
+
+
+#TravellerPic{
+    margin-top: -1px;
+    text-align: center;
+}
+
+#Help{
+    right: 20px;
+    bottom: 20px;
+    position: absolute;
+    overflow: auto;
+}
+
+#logout{
+    left: 20px;
+    bottom: 20px;
+    position: absolute;
+    overflow: auto;
+}
+
+
+#tripList{
+    border:1px solid black;
+}
+
+#add{
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#wavePic{
+    margin-top: -1px;
+    text-align: center;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+}
+
+
+#map {
+    height: 400px;
+    width: 1000px;
+}
+
+
+
+
+@media screen and (min-width: 400px) {
+    .right-column{
+        display: none;
+    }
+    .right-column-small{
+        display: block;
+        float: right;
+    }
+
+    .left-column{
+        width:  100%;
+    }
+
+    .mid-column{
+        width:  100%;
+    }
+
+} 
+
+@media screen and (min-width: 1000px) {
+    .left-column{
+        float: left;
+        width:  50%;
+    }
+
+    .mid-column{
+        float: left;
+        width:  50%;
+    }
+
+} 
+@media screen and (min-width: 1400px) {
+    .left-column{
+        float: left;
+        width:  35%;
+    }
+
+    .mid-column{
+        float: left;
+        width:  35%;
+    }
+
+    .right-column{
+        float: left;
+        width: 30%;
+    }
+    #content>div{
+        max-height: 55vh;
+        overflow: auto;
+    }
+    .right-column{
+        display: block;
+    }
+    .right-column-small{
+        display: none;
+    }
+}

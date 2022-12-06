@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Trip Planner</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'plannerapp/style.css' %}">
+    <script src="{% static 'plannerapp/scpt.js' %}"></script>
+</head>
+
+<body>
+    <div id="title" style="background-image: linear-gradient(rgb(198, 220, 235), rgba(220,227,229,0.21))">
+        <h1>Trip Planner</h1>
+        <h2>An easy way to plan trips with friends and family.</h2>
+    </div>
+
+    {% block content %}
+        <div id="LogIn">
+            <h3>Start planning:</h3> 
+            <a href="../accounts/login/">Log In</a>
+            <h3>Don't have an account?</h3>  
+            <a href="register">Register</a>
+        </div>
+
+
+
+        <div id="TravellerPic">
+            <img src="{% static 'plannerapp/img/Traveller.jpg' %}" alt="Traveller" width="750" height="433">
+            <p> (Admin: Username: yubin; Password: han390cnit581)</p>
+            <p> (Test user: Username: janedoe; Password: testusr1jd)</p>
+        </div>
+    {% endblock %}
+
+    <div id="Help">
+        <a href="#">Help</a>
+    </div>
+</body>
+</html>

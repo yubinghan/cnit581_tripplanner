@@ -1,0 +1,72 @@
+{% extends "plannerapp/edit.html" %}
+
+{% block content %}
+    <div id="title" style="background-image: linear-gradient(rgb(198, 220, 235), rgba(220,227,229,0.21))">
+        <h1>Trip Planner - Edit Daily Schedule</h1>
+    </div>
+    <table class="center" id = dailySchedule>
+        <tr>
+            <th>Time</th>
+            <th>Event Type</th>
+            <th>Description</th>
+            <th>Fee</th>
+            <th>Member</th>
+        </tr>
+        <tr>
+            <td><input type="time" id="appt"></td>
+            <td>
+                <input list="activity-list" id="activity">
+                <datalist id="activity-list">
+                    <option value="Accomodation">
+                    <option value="Transportation">
+                    <option value="Dining">
+                    <option value="Sights">
+                    <option value="Entertainment">
+                </datalist>
+                <!--<button type="submit" onclick="srch()">Search</button>
+                <p>(Currently only search for restaurants is enabled)</p>-->
+            </td>
+            <td><input type="text" placeholder="Add Description" id="dlDscp"></td>
+            <td><input type="text" placeholder="Enter spending $" id="dlDscp"></td>
+            <td><input type="number" step="1" min="0" placeholder="Enter # of Atendees" id="attendNum"> </td>
+        </tr>
+
+        <tr>
+            <td><input type="time" id="appt"></td>
+            <td>
+                <input list="activity-list" id="activity">
+                <datalist id="activity-list">
+                    <option value="Accomodation">
+                    <option value="Transportation">
+                    <option value="Dining">
+                    <option value="Sights">
+                    <option value="Entertainment">
+                </datalist>
+            </td>
+            <td><input type="text" placeholder="Add Description" id="dlDscp"></td>
+            <td><input type="text" placeholder="Enter spending $" id="dlDscp"></td>
+            <td><input type="number" step="1" min="0" placeholder="Enter # of Atendees" id="attendNum"> </td>
+        </tr>
+
+        <tr>
+            <td><input type="time" id="appt"></td>
+            <td>
+                <input list="activity-list" id="activity">
+                <datalist id="activity-list">
+                    <option value="Accomodation">
+                    <option value="Transportation">
+                    <option value="Dining">
+                    <option value="Sights">
+                    <option value="Entertainment">
+                </datalist>
+            </td>
+            <td><input type="text" placeholder="Add Description" id="dlDscp"></td>
+            <td><input type="text" placeholder="Enter spending $" id="dlDscp"></td>
+            <td><input type="number" step="1" min="0" placeholder="Enter # of Atendees" id="attendNum"> </td>
+        </tr>
+    </table>
+
+    <div id="map">    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196237.09396168837!2d-86.27317625599593!3d39.77996374151124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886b50ffa7796a03%3A0xd68e9df640b9ea7c!2sIndianapolis%2C%20IN!5e0!3m2!1sen!2sus!4v1670300898519!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    {% endblock %}

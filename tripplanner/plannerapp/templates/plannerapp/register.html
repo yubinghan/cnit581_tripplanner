@@ -1,0 +1,16 @@
+{% extends "plannerapp/home.html" %}
+
+{% block title %}Create an account{% endblock %}
+
+{% block content %}
+
+    <form method="POST" class="form-group">
+        <fieldset id="Register">
+            <legend>Register:</legend>
+            {% csrf_token %}
+            {{form}}
+            <button type="submit" class="btn btm-success">Register</button>
+        </fieldset>
+    </form>
+
+{% endblock %}

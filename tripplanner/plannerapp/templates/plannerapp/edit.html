@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Trip Planner</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'plannerapp/style.css' %}">
+    <script src="{% static 'plannerapp/scpt.js' %}"></script>
+</head>
+
+
+<body>
+    {% if user.is_authenticated %}
+        {% block content %}
+            <div id="title" style="background-image: linear-gradient(rgb(198, 220, 235), rgba(220,227,229,0.21))">
+                <h1>Trip Planner - Add a trip</h1>
+            </div>
+            <div class="content">
+                <div class="left-column">
+                    <h2>Info</h2>
+                    <h3>Check out our recommendations:<a href="tripRecommendation" target="_blank"> Go!</a></h3>
+                    
+                    <div>
+                        <label>Dates: </label>   
+                        <input type="date" id="start">  
+                        <label> - </label>   
+                        <input type="date" id="end">  
+                    </div>
+
+                    <div>
+                        <label>From: </label>
+                        <input type="text" placeholder="Enter location" id="from"> 
+                        <label>To: </label>
+                        <input type="text" placeholder="Enter location" id="to">  
+                    </div>
+
+                    <!--<div>
+                        <label>Name: </label>   
+                        <input type="text" placeholder="Enter name" id="name">
+                        <label>Email: </label>   
+                        <input type="text" placeholder="Enter email" id="email"> 
+                        <label for="Spending">Spending:</label>
+                        <select name="Spending" id="spending">
+                            <option value="Due">Due</option>
+                            <option value="Paid">Paid</option>
+                            <option value="Overdue">Overdue</option>
+                        </select> 
+                    </div>-->
+                    <div>
+                        <label>Traverls:</label>
+                        <input type="number" step="1" min="0" placeholder="Enter # of Travellers" id="travellerNum"> 
+                        <button type="submit" onclick="addMembers()">Add Members</button>
+                    </div>    
+                    
+                    <div id="add_Member"></div>
+                </div>
+
+
+                <div class="mid-column">
+                    <h2>Detailed schedule</h2>
+
+                    <ol>
+                        <li><a href="daily" target="_blank" onclick="getInfo">Add daily schedule</a></li>
+                    </ol>  
+                    
+
+                </div>
+
+
+                <div class="right-column">
+                    <h2>Action</h2>
+                    <label for="Status">Status:</label>
+                    <select name="Status" id="status">
+                        <option value="Planning">Planning</option>
+                        <option value="Upcoming">Upcoming</option>
+                        <option value="Ongoing">Ongoing</option>
+                        <option value="Past/Complete">Past/Complete</option>
+                        <option value="Past/Incomplete">Past/Incomplete</option>
+                    </select>
+
+                    <div id="delete">
+                        <a href="#">Cancel</a>
+                    </div> 
+            
+                    <div id="addCfm">
+                        <a href="#">Confirm</a>
+                    </div> 
+                </div>
+
+            </div>
+        {% endblock %}
+
+        <div id="logout">
+            <a href="../accounts/logout/">Log out</a>
+        </div> 
+
+        <div id="Help">
+            <a href="#">Help</a>
+        </div>
+    {% else %}
+        <p>You are not logged in</p>
+    {% endif %}
+</body>
+
+</html>
