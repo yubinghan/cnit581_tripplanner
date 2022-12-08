@@ -3,6 +3,6 @@
 Has trouble in deployment.
 Please use http://127.0.0.1:8000/plannerapp/ to run locally
 
-Demo https://youtu.be/0v3Uo-SaSJc
+Demo https://youtu.be/ZfwsYgzu-cs
 
 
